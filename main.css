@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro');
+/* global styles */
+* {
+    box-sizing: border-box;
+}
+body,html {
+    height: 100%;
+}
+body {
+    margin: 0;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 20px;
+    background-color: floralwhite;
+}
+/* Layout */
+.col-1-1 {
+    width: 80%;
+    margin: 0 auto;
+}
+.col-1-7 {
+    width: 14.2857%;
+    padding: 10px;
+    float: left;
+}
+/* Specific */
+header {
+    height: 40px;
+    background-color: sandybrown;
+    color: floralwhite;
+    text-shadow: 1px 1px 1px black;
+    text-align: center;
+    margin: 0;
+}
+header h2 {
+    margin: 0;
+}
+header h2 span {
+    color: brown;
+}
+.tab {
+    height: 200px;
+    background-color: tomato;
+}
+.seven {
+    font-size: 12px;`
+}
+.clock {
+    width: 60%;
+    margin: 0 auto;
+}
+.clock div {
+    height: 100px;
+    width: 60px;
+    float: left;
+    text-align: center;
+    font-size: 48px;
+    line-height: 96px;
+    color: brown;
+    text-shadow: 1px 1px 1px skyblue;
+}
+.btnHolder {
+    width: 60%;
+    margin: 10px auto;
+}
+.btnHolder button {
+    width: 100%;
+    height: 50px;
+    border-radius: 5px;
+    outline: none;
+    border: 1px solid brown;
+    background-color: rgb(152, 27, 69);
+    color: white;
+    font-size: 28px;
+}
+
+/* Helpers */
