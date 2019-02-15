@@ -75,7 +75,7 @@ header h2 span {
 }
 .clock div {
     height: 100px;
-    width: 60px;
+    width: 33%;
     float: left;
     text-align: center;
     font-size: 48px;
@@ -99,3 +99,8 @@ header h2 span {
 }
 
 /* Helpers */
+.clearfix::after{
+    content: " ";
+    display: block;
+    clear: both;
+}
