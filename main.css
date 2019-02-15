@@ -39,14 +39,39 @@ header h2 span {
 }
 .tab {
     height: 200px;
-    background-color: tomato;
+    background-color: rgba(233, 148, 21, 0.4);
+    position: relative;
+}
+.day {
+    position: absolute;
+    height: 20px;
+    width: 20px;
+    top: -25px;
+    left: 0px;
+    color: white;
+    font-size: 16px;
+    border: 1px solid palevioletred;
+    text-align: center;
+    line-height: 18px;
+    border-radius: 50%;
+    background-color: rgb(173, 81, 39);
+}
+.procent {
+    height: 0%;
+    width: 100%;
+    background-color: tomato;;
+    position: absolute;
+    bottom: 0;
+    text-align: center;
+    color: aliceblue;
 }
 .seven {
-    font-size: 12px;`
+    font-size: 12px;
 }
 .clock {
     width: 60%;
     margin: 0 auto;
+ 
 }
 .clock div {
     height: 100px;
