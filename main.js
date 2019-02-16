@@ -1,6 +1,10 @@
 let startBtn = document.querySelector('.btnHolder button');
-let todayTab = document.querySelector('body > div:nth-child(2)>div:nth-child('+(new Date().getDay()+1)+')');
-let varName = 'day' + new Date().getDay();
+let vildana = new Date().getDay();
+if(vildana == 0){
+vildana = 6;
+}
+let todayTab = document.querySelectorAll('.tab')[vildana];
+let varName = 'day' + vildana;
 
 let hoursDiv = document.querySelector('.hours');
 let minutesDiv = document.querySelector('.minutes');
