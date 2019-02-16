@@ -10,7 +10,8 @@ body {
     margin: 0;
     font-family: 'Source Sans Pro', sans-serif;
     font-size: 20px;
-    background-color: floralwhite;
+    /* background-color: floralwhite; */
+    background-color: rgba(45, 197, 197, 0.623);
 }
 /* Layout */
 .col-1-1 {
