@@ -16,6 +16,7 @@ body {
 .col-1-1 {
     width: 80%;
     margin: 0 auto;
+    border-bottom: 1px solid rgba(0,0,0,0.1);
 }
 .col-1-7 {
     width: 14.2857%;
@@ -30,6 +31,7 @@ header {
     text-shadow: 1px 1px 1px black;
     text-align: center;
     margin: 0;
+    line-height: 6.5vh;
 }
 header h2 {
     margin: 0;
@@ -133,4 +135,7 @@ footer {
     content: " ";
     display: block;
     clear: both;
+}
+.no-border {
+    border-bottom: none;
 }
