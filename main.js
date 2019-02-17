@@ -1,18 +1,20 @@
 let startBtn = document.querySelector('.btnHolder button');
-let vildana = new Date().getDay();
-if(vildana == 0){
-vildana = 6;
-}
-let todayTab = document.querySelectorAll('.tab')[vildana];
-let varName = 'day' + vildana;
+let today = (new Date().getDay()) ? new Date().getDay() : 6;
+
+let todayTab = document.querySelectorAll('.tab')[today];
+let varName = 'day' + today;
 
 let hoursDiv = document.querySelector('.hours');
 let minutesDiv = document.querySelector('.minutes');
 let secondsDiv = document.querySelector('.seconds');
+let resetBtn = document.querySelector('#reset');
+
 // global var for stats
+
 let totalCigarNumber = 0;
 let todayCigarNumber = 0;
 let loop;
+
 displayTodayCigars()
 configApp();
 if (localStorage.totalCigarNumber) {
@@ -20,8 +22,24 @@ if (localStorage.totalCigarNumber) {
 }
 
 startBtn.addEventListener('click',smokeOne);
+resetBtn.addEventListener('click',resetLocalStorage);
 
+function resetLocalStorage() {
+    let conf = confirm('Reset all stats ?');
+    if(conf){
+        localStorage.day0 = 0;
+        localStorage.day1 = 0;
+        localStorage.day2 = 0;
+        localStorage.day3 = 0;
+        localStorage.day4 = 0;
+        localStorage.day5 = 0;
+        localStorage.day6 = 0;
+        localStorage.removeItem('lastSmoked');
+        localStorage.removeItem('totalCigarNumber');
 
+        location.reload();
+    }
+}
 
 function smokeOne() {
     this.style.display = "none";
@@ -104,11 +122,25 @@ function configApp(){
 
 function displayTodayCigars() {
     let innerTab = todayTab.querySelector('.procent');
+    
     innerTab.innerHTML = localStorage[varName] || 0;
-    var theCSSprop = parseInt(window.getComputedStyle(innerTab, null).getPropertyValue("height"));
     let procent = parseInt(localStorage[varName]) * 4;
     innerTab.style.height = procent + "%";
     
+    let monday = localStorage.day1 || 0;
+    let thuesday = localStorage.day2 || 0;
+    let wednesday = localStorage.day3 || 0;
+    let thursday = localStorage.day4 || 0;
+    let friday = localStorage.day5 || 0;
+    let suterday = localStorage.day6 || 0;
+    let sunday = localStorage.day0 || 0;
     
+    let days = [sunday,monday,thuesday,wednesday,thursday,friday,suterday];
+
+    days.forEach((day,index) => {
+        let procentDiv = document.querySelectorAll('.tab')[index].querySelector('.procent'); // 0,1,2,3,4,5,6
+        procentDiv.style.height = parseInt(day * 2.9) + "%";
+        procentDiv.innerHTML = day;
+    });
     
 }
