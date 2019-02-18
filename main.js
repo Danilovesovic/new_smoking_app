@@ -1,8 +1,11 @@
 let startBtn = document.querySelector('.btnHolder button');
-let today = (new Date().getDay()) ? new Date().getDay() : 6;
+let today = new Date().getDay()
+console.log("Today var: "+today);
 
-let todayTab = document.querySelectorAll('.tab')[today];
+
+let todayTab = document.querySelector('.day'+today);
 let varName = 'day' + today;
+
 
 let hoursDiv = document.querySelector('.hours');
 let minutesDiv = document.querySelector('.minutes');
@@ -121,12 +124,7 @@ function configApp(){
 }
 
 function displayTodayCigars() {
-    let innerTab = todayTab.querySelector('.procent');
-    
-    innerTab.innerHTML = localStorage[varName] || 0;
-    let procent = parseInt(localStorage[varName]) * 4;
-    innerTab.style.height = procent + "%";
-    
+
     let monday = localStorage.day1 || 0;
     let thuesday = localStorage.day2 || 0;
     let wednesday = localStorage.day3 || 0;
@@ -134,13 +132,16 @@ function displayTodayCigars() {
     let friday = localStorage.day5 || 0;
     let suterday = localStorage.day6 || 0;
     let sunday = localStorage.day0 || 0;
-    
-    let days = [sunday,monday,thuesday,wednesday,thursday,friday,suterday];
 
-    days.forEach((day,index) => {
-        let procentDiv = document.querySelectorAll('.tab')[index].querySelector('.procent'); // 0,1,2,3,4,5,6
+    let days = [sunday, monday, thuesday, wednesday, thursday, friday, suterday];
+
+    days.forEach((day, index) => {
+        let procentDiv = document.querySelector('.day'+index).querySelector('.procent'); // 0,1,2,3,4,5,6
         procentDiv.style.height = parseInt(day * 2.9) + "%";
         procentDiv.innerHTML = day;
+
+
     });
+
     
 }
